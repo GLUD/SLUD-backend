@@ -5,4 +5,4 @@ class Speaker(models.Model):
     trabajo = models.CharField(max_length=100)
     charla = models.CharField(max_length=100)
     descripcion_charla = models.TextField(max_length=255)
-    foto = models.ImageField(upload_to='fotos',blank=True, default=None)
+    foto = models.CharField(max_length=200)
