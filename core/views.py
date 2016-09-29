@@ -1,7 +1,6 @@
 from core.serializers import SpeakerSerializer
 from rest_framework import viewsets #conjunto de vistas
 from core.models import Speaker
-from core.permissions import LoginOrReadOnly
 from rest_framework import permissions
 
 class SpeakerViewSet(viewsets.ModelViewSet):
