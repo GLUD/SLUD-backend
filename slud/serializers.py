@@ -1,4 +1,4 @@
-from slud.models import Speaker
+from slud.models import Speaker, Charla
 from rest_framework import serializers
 class SpeakerSerializer(serializers.HyperlinkedModelSerializer):
     """
@@ -7,3 +7,9 @@ class SpeakerSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Speaker
         fields = ('nombre','trabajo','foto',)
+
+class CharlaSerializer(serializers.HyperlinkedModelSerializer):
+    speakers = SpeakerSerializer(many=True)
+    class Meta:
+        model = Charla
+        fields = ('titulo', 'descripcion', 'speakers','fecha', 'hora')

@@ -12,6 +12,8 @@ class Charla(models.Model):
     titulo = models.CharField(max_length=100)
     descripcion = models.TextField(max_length=255)
     speakers = models.ManyToManyField(Speaker)
+    fecha = models.DateField()
+    hora = models.TimeField()
     #TODO: make date and hour fields.
     def __str__(self):
         return self.titulo
