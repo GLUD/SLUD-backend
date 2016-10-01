@@ -1,7 +1,7 @@
 from django.db import models
 
 class Speaker(models.Model):
-    nombre = models.CharField(max_length=50)
+    nombre = models.CharField(max_length=100)
     trabajo = models.CharField(max_length=100)
     foto = models.URLField(max_length=200)
 
@@ -17,3 +17,9 @@ class Charla(models.Model):
     #TODO: make date and hour fields.
     def __str__(self):
         return self.titulo
+
+class Sponsor(models.Model):
+    logo = models.URLField(max_length=200)
+    nombre = models.CharField(max_length=100)
+    def __str__(self):
+        return self.nombre
