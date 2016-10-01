@@ -1,6 +1,6 @@
 from django.conf.urls import url, include
 from django.contrib import admin
-from core.views import SpeakerViewSet
+from slud.views import SpeakerViewSet
 from rest_framework import routers
 
 router = routers.DefaultRouter()

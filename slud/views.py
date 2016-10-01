@@ -1,6 +1,6 @@
-from core.serializers import SpeakerSerializer
+from slud.serializers import SpeakerSerializer
 from rest_framework import viewsets #conjunto de vistas
-from core.models import Speaker
+from slud.models import Speaker
 from rest_framework import permissions
 
 class SpeakerViewSet(viewsets.ModelViewSet):
