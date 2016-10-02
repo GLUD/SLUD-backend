@@ -3,7 +3,7 @@ from django.db import models
 class Speaker(models.Model):
     nombre = models.CharField(max_length=100)
     trabajo = models.CharField(max_length=100)
-    foto = models.URLField(max_length=200)
+    foto = models.URLField(max_length=400)
 
     def __str__(self):
         return self.nombre
@@ -19,7 +19,7 @@ class Charla(models.Model):
         return self.titulo
 
 class Sponsor(models.Model):
-    logo = models.URLField(max_length=200)
+    logo = models.URLField(max_length=400)
     nombre = models.CharField(max_length=100)
     def __str__(self):
         return self.nombre
