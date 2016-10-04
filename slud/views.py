@@ -2,6 +2,10 @@ from slud.serializers import SpeakerSerializer, CharlaSerializer, SponsorSeriali
 from rest_framework import viewsets #conjunto de vistas
 from slud.models import Speaker, Charla, Sponsor
 from rest_framework import permissions
+from django.http import HttpResponseRedirect
+
+def home(request):
+    return HttpResponseRedirect('/api/')
 
 class SpeakerViewSet(viewsets.ModelViewSet):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
