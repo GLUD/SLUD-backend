@@ -2,8 +2,8 @@ from django.db import models
 
 class Speaker(models.Model):
     nombre = models.CharField(max_length=100)
-    trabajo = models.CharField(max_length=100)
-    foto = models.URLField(max_length=400)
+    trabajo = models.CharField(max_length=100, required=False)
+    foto = models.URLField(max_length=400, required=False)
 
     def __str__(self):
         return self.nombre

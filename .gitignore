@@ -4,3 +4,4 @@ __pycache__
 *.pyo
 *.json
 db.sqlite3
+migrations
