@@ -9,7 +9,8 @@ def home(request):
 
 class SpeakerViewSet(viewsets.ModelViewSet):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
-    queryset = Speaker.objects.all()
+    queryset = Speaker.objects.order_by('prioridad')
+    #TODO: ordenar pro prioridad y crear campo prioridad en Speakers
     serializer_class = SpeakerSerializer
 
 class CharlaViewSet(viewsets.ModelViewSet):
