@@ -12,7 +12,7 @@ class CharlaSerializer(serializers.HyperlinkedModelSerializer):
     speakers = SpeakerSerializer(many=True)
     class Meta:
         model = Charla
-        fields = ('titulo', 'descripcion', 'speakers','fecha', 'hora')
+        fields = ('titulo', 'descripcion', 'speakers','fecha', 'hora', 'lugar')
 
 class SponsorSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
