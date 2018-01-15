@@ -28,6 +28,7 @@ class Migration(migrations.Migration):
                 ('nombre', models.CharField(max_length=50)),
                 ('trabajo', models.CharField(max_length=100)),
                 ('foto', models.URLField()),
+		('prioridad', models.CharField(max_length=2, default="0"))
             ],
         ),
         migrations.AddField(

@@ -1,0 +1,34 @@
+version: "3.1"
+
+services:
+  back:
+    image: glud/slud-backend:latest
+    ports:
+      - "8000:8000"
+    networks:
+      - backend
+    environment:
+      SECRET_KEY_FILE: "./secret_key"
+      ADMIN_USER: root
+      ADMIN_EMAIL: "miembro@glud.org"
+      ADMIN_PASSWORD_FILE: "./admin_key"
+      PUBLIC_HOST: sludapi.glud.org
+    volumes:
+      - ./django.priv:/usr/src/app/secret_key # archivos de contraseñas en la carpeta actual
+      - ./admin.priv:/usr/src/app/admin_key
+      - data:/usr/src/app/data/
+
+  front:
+    image: glud/slud-frontend:latest
+    ports:
+      - "80:80"
+    networks:
+      - backend
+    depends_on:
+      - backend
+volumes:
+  data:
+
+networks:
+  backend:
+        
