@@ -30,7 +30,7 @@ else:
     SECRET_KEY = os.getenv('SECRET_KEY')
 
 if not SECRET_KEY:
-    raise ValueError("bad SECRET_KEY, use SECRET_KEY or SECRET_KEY_FILE enviroment variables")	
+    raise ValueError("bad SECRET_KEY, use SECRET_KEY or SECRET_KEY_FILE enviroment variables")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
