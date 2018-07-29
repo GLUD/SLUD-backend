@@ -24,7 +24,7 @@ Se recomienda usar un archivo *.env* (que es ignorado por git gracias a *.gitign
 ```bash
 ## ej. ./misconfiguraciones.env
 export SECRET_KEY='contraseña super segura'
-export PUBIC_HOST='localhost' # ej. sludapi.glud.org
+export PUBLIC_HOST='localhost' # ej. sludapi.glud.org
 export ADMIN_USER='admin'
 export ADMIN_PASSWORD='secreto'
 #...
