@@ -12,6 +12,8 @@ if [ -z "$ADMIN_PASSWORD" ]; then echo "Bad admin password, set ADMIN_PASSWORD o
 
 if [ -z "$ADMIN_EMAIL" ]; then echo "Bad admin email, set ADMIN_EMAIL"; exit 1; fi
 
+mkdir data
+
 # Aplica migraciones
 python manage.py makemigrations
 python manage.py migrate

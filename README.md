@@ -39,8 +39,10 @@ $ ./run.sh # Para hacer las migraciones, crear el usuario administrador y ejecut
 Ó se puede manualmente:
 
 ```bash
+$ mkdir data # necesario para la base de datos
 $ source ./misconfiguraciones.env # archivo de variables de entorno
 $ python manage.py createsuperusper #crea el usuario administrativo interactivamente
+$ python manage.py makemigrations # crear migraciones
 $ python manage.py migrate # aplica migraciones
 $ python manage.py collectstatic # crea el directorio ./static para los archivos estáticos
 $ python manage.py runserver 0.0.0.0:8000 # ejecuta el servidor en el puerto :8000
@@ -50,11 +52,11 @@ $ python manage.py runserver 0.0.0.0:8000 # ejecuta el servidor en el puerto :80
 Se puede usar docker para administrar el backend:
 
 ```bash
-$ docker run -p "8000:8000" \ 
-	-e SECRET_KEY="super secreto" \ 
-	-e PUBLIC_HOST="sludapi.glud.org" \ 
-	-e ADMIN_USER="admin" \ 
-	-e ADMIN_PASSWORD="secreto" \ 
+$ docker run -p "8000:8000" \
+	-e SECRET_KEY="super secreto" \
+	-e PUBLIC_HOST="sludapi.glud.org" \
+	-e ADMIN_USER="admin" \
+	-e ADMIN_PASSWORD="secreto" \
 	-e ADMIN_EMAIL="miembro@glud.org" glud/slud-backend:latest
 ```
 
@@ -85,4 +87,3 @@ Para docker/run.sh, las variables de entorno adicionales son:
 - [x] hacer que Django sirva archivos estáticos en /admin/ (se logró con el plugin [whitenoise](https://devcenter.heroku.com/articles/django-assets))
 - [ ] hacer equivalente /api/<test> a /api/<test>/
 - [ ] responder en /api/speakers/ con el campo prioridad adicional
-
