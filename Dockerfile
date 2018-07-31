@@ -1,4 +1,4 @@
-FROM python:3-alpine
+FROM python:3.6-alpine
 LABEL maintainer "Sebastian Tabares Amaya <sytabaresa@gmail.com>"
 
 RUN apk --no-cache add postgresql-client nano
