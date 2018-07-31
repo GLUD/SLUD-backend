@@ -20,10 +20,11 @@ if ! [ -e data/db.sqlite3 ]; then
 	# Aplica migraciones
 	python manage.py makemigrations
 	python manage.py migrate
-
-	# crea el directorio de archivos staticos
-	python manage.py collectstatic
 fi
+
+# crea el directorio de archivos staticos
+python manage.py collectstatic
+
 
 # Crea el superusuario (forma no interactiva de python manage.py createsuperuser)
 echo "from django.contrib.auth.models import User; User.objects.filter(email='$ADMIN_EMAIL').delete(); User.objects.create_superuser('$ADMIN_USER', '$ADMIN_EMAIL', '$ADMIN_PASSWORD')" | python manage.py shell
