@@ -14,12 +14,16 @@ if [ -z "$ADMIN_EMAIL" ]; then echo "Bad admin email, set ADMIN_EMAIL"; exit 1; 
 
 mkdir -p data
 
-# Aplica migraciones
-python manage.py makemigrations
-python manage.py migrate
 
-# crea el directorio de archivos staticos
-python manage.py collectstatic
+if ! [ -e data/db.sqlite3 ]; then
+
+	# Aplica migraciones
+	python manage.py makemigrations
+	python manage.py migrate
+
+	# crea el directorio de archivos staticos
+	python manage.py collectstatic
+fi
 
 # Crea el superusuario (forma no interactiva de python manage.py createsuperuser)
 echo "from django.contrib.auth.models import User; User.objects.filter(email='$ADMIN_EMAIL').delete(); User.objects.create_superuser('$ADMIN_USER', '$ADMIN_EMAIL', '$ADMIN_PASSWORD')" | python manage.py shell
